@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost";
-$database = "db_mahasiswa1";
+$database = "db_mahasiswa2";
 $username = "root";
 $password = "";
 
