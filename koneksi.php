@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost";
-$database = "db_mahasiswa2";
+$database = "db_riska";
 $username = "root";
 $password = "";
 

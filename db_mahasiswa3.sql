@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2024 at 06:23 PM
+-- Generation Time: Apr 03, 2024 at 11:01 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_mahasiswa1`
+-- Database: `db_mahasiswa3`
 --
 
 -- --------------------------------------------------------
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `username` varchar(15) NOT NULL,
-  `password` varchar(15) NOT NULL
+  `user` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -40,11 +40,11 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `mahasiswa` (
   `nim` varchar(15) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `no_hp` int(13) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `no_hp` int(15) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `password` varchar(15) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `id_prodi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -53,8 +53,8 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `no_hp`, `alamat`, `foto`, `password`, `id_prodi`) VALUES
-('E020322087', 'Audi', 822222, 'Gambut', 'isan.png', '$2y$10$gZh2z0gE', 2),
-('E020322999', 'Hikmah', 811111111, 'Anjir', 'isan.jpg', '$2y$10$GqnFV1Y2', 1);
+('E9221', 'risqua', 9867, 'bjb', 'risqua.jpg', '$2y$10$rhRip/qypWnTdVzh9cpkt.YZ2Qbw48HlDzxkY6i46ggYWWR9orjKO', 3),
+('E92829', 'Riska', 123456, 'bjm', 'rska.jpg', '$2y$10$rhlKzbSBUdjHMCz94Hj5EOFQDEUjhTFEFf8YuIa1734abLvkhpHq.', 1);
 
 -- --------------------------------------------------------
 
@@ -64,7 +64,7 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `no_hp`, `alamat`, `foto`, `password`, `
 
 CREATE TABLE `prodi` (
   `id_prodi` int(11) NOT NULL,
-  `nama_prodi` varchar(50) NOT NULL
+  `nama_prodi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -72,8 +72,10 @@ CREATE TABLE `prodi` (
 --
 
 INSERT INTO `prodi` (`id_prodi`, `nama_prodi`) VALUES
-(1, 'Manajemen Informatika'),
-(2, 'Administrasi Bisnis');
+(1, 'D3 Manajemen Informatika'),
+(2, 'D3 Administrasi Bisnis'),
+(3, 'D3 Teknik Sipil'),
+(5, 'tes');
 
 --
 -- Indexes for dumped tables
@@ -83,7 +85,7 @@ INSERT INTO `prodi` (`id_prodi`, `nama_prodi`) VALUES
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`user`);
 
 --
 -- Indexes for table `mahasiswa`
@@ -106,7 +108,7 @@ ALTER TABLE `prodi`
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
-  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
