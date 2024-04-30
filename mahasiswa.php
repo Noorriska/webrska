@@ -1,8 +1,9 @@
 <?php
+session_start();
+require 'koneksi.php';
+ceklogin();
 include 'template/header.php';
 include 'template/side.php';
-require 'koneksi.php';
-
 $query = "SELECT * FROM mahasiswa JOIN prodi ON mahasiswa.id_prodi = prodi.id_prodi";
 $hasil = mysqli_query($conn, $query);
 

@@ -1,6 +1,10 @@
 <?php
+session_start();
+require 'koneksi.php';
+ceklogin();
 include 'template/header.php';
 include 'template/side.php';
+
 ?>
 
 <!-- Content Wrapper. Contains page content -->
