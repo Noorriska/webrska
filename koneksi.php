@@ -14,3 +14,8 @@ if (!isset($_SESSION['login'])) {
 } 
 
 }
+  function cekadmin(){
+    if ($_SESSION['hakakses'] != 'admin'){
+      header("location: index.php");
+    }
+  }

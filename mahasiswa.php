@@ -1,9 +1,14 @@
 <?php
 session_start();
 require 'koneksi.php';
+cekadmin();
 ceklogin();
+
 include 'template/header.php';
 include 'template/side.php';
+
+
+
 $query = "SELECT * FROM mahasiswa JOIN prodi ON mahasiswa.id_prodi = prodi.id_prodi";
 $hasil = mysqli_query($conn, $query);
 
